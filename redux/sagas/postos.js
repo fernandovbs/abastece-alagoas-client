@@ -1,6 +1,6 @@
 import { call, put } from "redux-saga/effects";
 import { URI } from "../../helpers/uri";
-import { types } from "../reducers/postos";
+import { types as postosTypes } from "../reducers/postos";
 
 export const getPostosHandle = async (location, axios) => {
   return (
@@ -23,6 +23,6 @@ export function* getPostos(axios, { location }) {
 }
 
 export const setPostos = postos => ({
-  type: types.set,
+  type: postosTypes.set,
   postos
 });
