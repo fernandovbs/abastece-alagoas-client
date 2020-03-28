@@ -5,6 +5,7 @@ import { createAppContainer } from 'react-navigation';
 
 import { createStackNavigator } from 'react-navigation-stack'
 import CombustiveisList from './components/CombustiveisList'
+import PostosProximosList from './components/PostosProximosList'
 import Header from './components/layout/Header'
 
 const AppNavigator = createStackNavigator({
@@ -14,6 +15,12 @@ const AppNavigator = createStackNavigator({
         headerTitle: () => <Header title='Início'/>,
       } 
     },
+    PostosProximos: {
+      screen: PostosProximosList,
+      navigationOptions: {
+        headerTitle: () => <Header title='Postos nas proximidades'/>,
+      } 
+    },  
   },
   {
     initialRouteName: 'Home',

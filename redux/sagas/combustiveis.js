@@ -7,12 +7,12 @@ const getCombustiveis = async () => {
 
     if (combustiveis === null) {
         combustiveis = [
-            {id: 1, desc: 'Gasolina comum'}, 
-            {id: 2, desc: 'Gasolina aditivada'},
-            {id: 3, desc: 'Álcool'},
-            {id: 4, desc: 'Diesel comum'},
-            {id: 5, desc: 'Diesel aditivado'},
-            {id: 6, desc:  'Gás natural (GNV)'}
+            {id: '1', desc: 'Gasolina comum'}, 
+            {id: '2', desc: 'Gasolina aditivada'},
+            {id: '3', desc: 'Álcool'},
+            {id: '4', desc: 'Diesel comum'},
+            {id: '5', desc: 'Diesel aditivado'},
+            {id: '6', desc:  'Gás natural (GNV)'}
         ]
         setItem('combustiveis', combustiveis)    
     }

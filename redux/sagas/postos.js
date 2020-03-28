@@ -2,21 +2,18 @@ import { call, put } from "redux-saga/effects";
 import { URI } from "../../helpers/uri";
 import { types as postosTypes } from "../reducers/postos";
 
-export const getPostosHandle = async (location, axios) => {
+export const getPostosHandle = async (params, axios) => {
   return (
     axios
-      .request({
-        method: "get",
-        url: `${URI.getPostos(location)}`
-      })
-      .then(res => res.data)
+      .post(`${URI.getPostos}`, params)
+      .then(res => res.data).catch(error => {console.log(error.message)})
   );
 };
 
-export function* getPostos(axios, { location }) {
+export function* getPostos(axios, { params }) {
   try {
-    const { items } = yield call(getPostosHandle, location, axios);
-    yield put(setPostos(items ? items.slice(0, 10) : []));
+    const postos = yield call(getPostosHandle, params, axios);
+    yield put(setPostos(postos ? postos.slice(0, 10) : []));
   } catch (error) {
     console.log(error);
   }

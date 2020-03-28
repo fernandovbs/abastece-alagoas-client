@@ -13,7 +13,7 @@ const CombustiveisList = ({combustiveis = [], getCombustiveis}) => {
     
     return (
         <Container>
-            {combustiveis.map(combustivel => 
+            {combustiveis.map((combustivel) => 
                 <CombustiveisItem key={combustivel.id} combustivel={combustivel} /> 
             )}
         </Container>
